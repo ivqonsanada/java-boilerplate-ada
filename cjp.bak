@@ -1,0 +1,23 @@
+#!/bin/sh
+
+ARGS = "$@"
+
+PACKAGE_NAME = $ARGS[1]
+
+if [[ -z $PACKAGE_NAME ]]; then      
+  echo "ERROR: Please provide project name."
+  echo "USAGE: ./cjp.sh <your_project_name>."
+  exit 1
+fi
+
+echo "INFO: Copying template.."
+cp -r ~/.cjp/template .
+mv template $PACKAGE_NAME
+
+echo "INFO: Initializing git repo"
+git init 
+git add .
+
+echo "INFO: Successfully created new project!"
+exit 1
+

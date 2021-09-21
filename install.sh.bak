@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# set PATH so it includes user's private bin if it exists
+mkdir -p "$HOME/bin"
+cp cjp "$HOME/bin"
+
+#if [ -d "$HOME/bin" ] ; then
+#   cp cjp "$HOME/bin"
+#fi
+
+# we need to store the template on a dedicated folder, so we can copy it anytime using cjp command
+mkdir -p ~/.cjp/template
+cp -r template ~/.cjp/template
+
+#add the script PATH into .bashrc or ~/.zshrc
+#below code replace all my settings in .zshrc
+#really?? sorry.. i think my bashrc has been broken to
+# don't try it guys!! let me test it first 
+
+
+
+
+if [ -f "$HOME/.zshrc" ] ; then
+   echo "export PATH=$PATH:~/bin" >> ~/.zshrc
+else
+   echo "export PATH=$PATH:~/bin" >> ~/.bashrc
+fi
+
+exit 1
