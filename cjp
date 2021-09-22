@@ -9,7 +9,7 @@ TARGET_DIRECTORY=${ARGS[1]} || false
 function initProject() {
   if [[ -z $PROJECT_NAME ]]; then
       echo "ERROR: Please provide project name."
-      echo "USAGE: ./cjp.sh <your_project_name>."
+      echo "USAGE: ./cjp <your_project_name>."
       exit 1
   fi
 
